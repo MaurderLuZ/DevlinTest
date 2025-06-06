@@ -13,5 +13,8 @@
   "license": "MIT",
   "devDependencies": {
     "live-server": "^1.2.2"
+  },
+  "dependencies": {
+    "gsap": "^3.12.2"
   }
 }

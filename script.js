@@ -1,39 +1,31 @@
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
-    const offscreenElements = document.querySelectorAll('[offscreen]');
-    offscreenElements.forEach(el => {
-        observer.observe(el);
+    gsap.registerPlugin(ScrollTrigger);
+    
+    gsap.utils.toArray('[offscreen]').forEach((element, index) => {
+        gsap.fromTo(element, 
+            { opacity: 0, y: 50 },
+            {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: element,
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    toggleActions: "play none none reverse"
+                },
+                delay: index * 0.1
+            }
+        );
     });
     
     const header = document.querySelector('.header');
-    let lastScrollY = window.scrollY;
-    
-    window.addEventListener('scroll', () => {
-        const currentScrollY = window.scrollY;
-        
-        if (currentScrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.backdropFilter = 'blur(10px)';
-            header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.background = 'transparent';
-            header.style.backdropFilter = 'none';
-            header.style.borderBottom = 'none';
-        }
-        
-        lastScrollY = currentScrollY;
+    ScrollTrigger.create({
+        start: "top -100",
+        end: 99999,
+        toggleClass: {className: "scrolled", targets: ".header"}
     });
     
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -52,15 +44,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    const hero = document.querySelector('.hero');
-    const heroImage = document.querySelector('.hero-image');
-    
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const rate = scrolled * -0.5;
-        
-        if (heroImage && scrolled < hero.offsetHeight) {
-            heroImage.style.transform = `translateY(${rate}px)`;
+    gsap.to('.hero-image', {
+        yPercent: -50,
+        ease: "none",
+        scrollTrigger: {
+            trigger: '.hero',
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true
         }
     });
     
