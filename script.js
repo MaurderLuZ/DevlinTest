@@ -24,11 +24,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScrollY = window.scrollY;
         
         if (currentScrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
-        } else {
             header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = 'none';
+            header.style.backdropFilter = 'blur(10px)';
+            header.style.borderBottom = '1px solid rgba(0, 0, 0, 0.1)';
+        } else {
+            header.style.background = 'transparent';
+            header.style.backdropFilter = 'none';
+            header.style.borderBottom = 'none';
         }
         
         lastScrollY = currentScrollY;
