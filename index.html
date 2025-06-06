@@ -9,6 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Century+Gothic:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 <body>
     <!-- Header Navigation -->
@@ -80,10 +82,16 @@
                 <div class="overview-content">
                     <div class="overview-text">
                         <p>We provide high-performance GPU computing solutions for AI researchers, developers, and creators. Access cutting-edge hardware instantly with flexible pricing and seamless scalability.</p>
-                        <div class="cta-button">
-                            <span>HOW WE WORK</span>
+                        <ul class="feature-list">
+                            <li>✓ NVIDIA A100, H100, and RTX 4090 GPUs available</li>
+                            <li>✓ Deploy in seconds with pre-configured environments</li>
+                            <li>✓ Scale from single GPUs to multi-node clusters</li>
+                            <li>✓ 99.9% uptime SLA with global data centers</li>
+                        </ul>
+                        <a href="#services" class="cta-button">
+                            <span>EXPLORE SERVICES</span>
                             <div class="arrow">→</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -100,10 +108,11 @@
                     <div class="service-content">
                         <h3 class="service-name">AI Compute</h3>
                         <h4 class="service-tagline">Powering Machine Learning at Scale.</h4>
-                        <div class="service-cta">
-                            <span>AI COMPUTE</span>
+                        <p class="service-description">Train large language models, run inference workloads, and accelerate deep learning research with our optimized AI compute infrastructure. Features include PyTorch, TensorFlow, and CUDA pre-installed environments.</p>
+                        <a href="#pricing" class="service-cta">
+                            <span>VIEW PRICING</span>
                             <div class="arrow">→</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -113,10 +122,11 @@
                     <div class="service-content">
                         <h3 class="service-name">Rendering</h3>
                         <h4 class="service-tagline">Professional Graphics Rendering Solutions.</h4>
-                        <div class="service-cta">
-                            <span>RENDERING</span>
+                        <p class="service-description">Render 3D animations, architectural visualizations, and VFX projects with industry-standard software like Blender, Maya, and Cinema 4D. Support for both CPU and GPU-accelerated rendering workflows.</p>
+                        <a href="#pricing" class="service-cta">
+                            <span>GET STARTED</span>
                             <div class="arrow">→</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
 
@@ -126,10 +136,11 @@
                     <div class="service-content">
                         <h3 class="service-name">Gaming</h3>
                         <h4 class="service-tagline">High-Performance Gaming in the Cloud.</h4>
-                        <div class="service-cta">
-                            <span>GAMING</span>
+                        <p class="service-description">Stream AAA games at 4K resolution with ultra-low latency. Perfect for game development, testing, and cloud gaming services. Supports DirectX 12, Vulkan, and OpenGL with dedicated gaming GPUs.</p>
+                        <a href="#pricing" class="service-cta">
+                            <span>START GAMING</span>
                             <div class="arrow">→</div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -238,9 +249,9 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <a href="#privacy">Privacy Policy</a>
-                    <a href="#terms">Terms of Service</a>
-                    <a href="#contact">Contact</a>
+                    <a href="#privacy-policy">Privacy Policy</a>
+                    <a href="#terms-of-service">Terms of Service</a>
+                    <a href="#contact-us">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
