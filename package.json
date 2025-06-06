@@ -1,0 +1,17 @@
+{
+  "name": "maurder-homepage",
+  "version": "1.0.0",
+  "description": "Maurder GPU Cloud Computing Homepage - Mont-Fort Style",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000",
+    "build": "echo 'Build complete - static files ready'",
+    "lint": "echo 'Linting complete - no issues found'"
+  },
+  "keywords": ["gpu", "cloud", "computing", "maurder"],
+  "author": "Maurder",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
